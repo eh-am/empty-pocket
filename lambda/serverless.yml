@@ -1,0 +1,26 @@
+# NOTE: update this with your service name
+service: lambda-es7
+
+# Use the serverless-webpack plugin to transpile ES6
+plugins:
+  - serverless-webpack
+
+# Enable auto-packing of external modules
+custom:
+  webpackIncludeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-east-1
+
+functions:
+  all:
+    handler: handler.all
+    events:
+      - http:
+          path: all
+          method: get
+    environment:
+      POCKET_CONSUMER_KEY: ${env:POCKET_CONSUMER_KEY}
+      POCKET_ACCESS_TOKEN: ${env:POCKET_ACCESS_TOKEN}
