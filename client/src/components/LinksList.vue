@@ -10,7 +10,6 @@
           <div class="url">
             <a :href="l.url">{{ l.url }}</a>
           </div>
-          
         </li>
       </ul>
     </template>
@@ -22,7 +21,7 @@ import moment from 'moment';
 const m = require('moment');
 
 export default {
-  name: 'HelloWorld',
+  name: 'LinksList',
   data() {
     return {
       links: []
@@ -57,9 +56,6 @@ export default {
 
       return chunks;
 
-
-      // TODO
-      // Refactore
       function findLastIndex(array, callback){
         const length = array.length - 1;
 
@@ -85,7 +81,7 @@ export default {
         this.links = res.list;
       })
       .catch(res => {
-        debugger;
+        // FIXME
       })
     
     }
@@ -114,11 +110,6 @@ header {
   position: sticky;
   top: 0;
   background: #4e3c88;
-  /* background: #99ffe3; */
-
-  /* color: #3EFDC8; */
-  /* color: #99ffe3; */
-  /* color: #000cff; */
   color: white;
   height: 70px;
   line-height: 70px;
@@ -132,14 +123,8 @@ ul {
   padding: 20px 0 50px 0;
 }
 
-
-li .title {
-
-}
-
 li .url {
   font-size: 14px;
-
 }
 
 .link {
